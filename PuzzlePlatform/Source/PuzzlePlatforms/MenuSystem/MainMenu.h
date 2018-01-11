@@ -30,10 +30,31 @@ private:
 	class UButton* HostButton;
 
 	UPROPERTY(meta = (BindWidget))
+	class UButton* JoinMenuButton;
+
+	UPROPERTY(meta = (BindWidget))
+	class UButton* CancelJoinButton;
+
+	UPROPERTY(meta = (BindWidget))
 	class UButton* JoinButton;
+
+	UPROPERTY(meta = (BindWidget))
+	class UWidgetSwitcher* MenuSwitcher;
+
+	UPROPERTY(meta = (BindWidget))
+	class UWidget* MainMenu;
+
+	UPROPERTY(meta = (BindWidget))
+	class UWidget* JoinMenu;
 
 	UFUNCTION()
 	void HostServer();
+
+	UFUNCTION()
+	void OpenMainMenu();
+
+	UFUNCTION()
+	void OpenJoinMenu();
 
 	UFUNCTION()
 	void JoinServer();
