@@ -21,6 +21,10 @@ protected:
 public:
 	void SetMenuInterface(IMenuInterface* MenuInterface);
 
+	void Setup();
+
+	void TearDown();
+
 private:
 	UPROPERTY(meta = (BindWidget))
 	class UButton* HostButton;

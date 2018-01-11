@@ -26,46 +26,37 @@ void UPuzzlePlatformsGameInstance::Init()
 void UPuzzlePlatformsGameInstance::LoadMenu()
 {
 	if (!ensure(MenuClass != nullptr)) return;
-	UMainMenu* Menu = CreateWidget<UMainMenu>(this, MenuClass);
+	Menu = CreateWidget<UMainMenu>(this, MenuClass);
 
 	if (!ensure(Menu != nullptr)) return;
-	Menu->AddToViewport();
-
-	APlayerController *PlayerController = GetFirstLocalPlayerController();
-	if (!ensure(PlayerController != nullptr)) return;
-
-	FInputModeUIOnly InputModeData;
-	InputModeData.SetWidgetToFocus(Menu->TakeWidget());
-	InputModeData.SetLockMouseToViewportBehavior(EMouseLockMode::DoNotLock);
-
-	PlayerController->SetInputMode(InputModeData);
-	PlayerController->bShowMouseCursor = true;
-
+	Menu->Setup();
 	Menu->SetMenuInterface(this);
 }
 
 void UPuzzlePlatformsGameInstance::Host()
 {
-	UEngine* Engine = GetEngine();
-	if (!ensure(Engine != nullptr)) return;
+	if (Menu != nullptr) Menu->TearDown();
 
+	UEngine* Engine = GetEngine();
+
+	if (!ensure(Engine != nullptr)) return;
 	Engine->AddOnScreenDebugMessage(0, 2, FColor::Green, TEXT("Hosting"));
 
 	UWorld* World = GetWorld();
-	if (!ensure(World != nullptr)) return;
 
+	if (!ensure(World != nullptr)) return;
 	World->ServerTravel("/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap?listen");
 }
 
 void UPuzzlePlatformsGameInstance::Join(const FString & Address)
 {
 	UEngine* Engine = GetEngine();
-	if (!ensure(Engine != nullptr)) return;
 
+	if (!ensure(Engine != nullptr)) return;
 	Engine->AddOnScreenDebugMessage(0, 5, FColor::Green, FString::Printf(TEXT("Joining %s"), *Address));
 
 	APlayerController *PlayerController = GetFirstLocalPlayerController();
-	if (!ensure(PlayerController != nullptr)) return;
 
+	if (!ensure(PlayerController != nullptr)) return;
 	PlayerController->ClientTravel(Address, ETravelType::TRAVEL_Absolute);
 }
