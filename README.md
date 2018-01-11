@@ -1,5 +1,5 @@
 # UE4-CppMenuSystem
-Building a simple survival game to start to understand the basic of survival systems in games.
+Building a modular UI system that will be able to be added to future projects easily and quickly.
 
 # C++ Modular Menu System - Unreal Engine 4
 
