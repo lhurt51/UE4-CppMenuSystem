@@ -15,13 +15,13 @@ Get the Udemy Course now and learn the muliplayer mastery with Unreal Engine 4: 
 ![alt text](https://udemy-images.udemy.com/course/480x270/1319066_eee6_2.jpg)
 
 Features
-  - Connecting UMG with C++
+  	- Connecting UMG with C++
 
 Skills Acquired
 
 	- Build multiplayer games.
-  - Share games with a large audience.
-  - Build UI with UMG and C++.
+  	- Share games with a large audience.
+ 	- Build UI with UMG and C++.
 **( Haven't Learned Yet )**
 
 	- Connect games via the Steam APIs.
