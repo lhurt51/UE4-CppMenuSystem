@@ -23,13 +23,13 @@ public:
 	virtual void Init();
 
 	UFUNCTION(BlueprintCallable)
-		void LoadMenu();
+	void LoadMenu();
 
 	UFUNCTION(Exec)
-		void Host();
+	void Host();
 
 	UFUNCTION(Exec)
-		void Join(const FString &Address);
+	void Join(const FString &Address);
 
 private:
 	TSubclassOf<class UUserWidget> MenuClass;

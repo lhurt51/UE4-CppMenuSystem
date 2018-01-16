@@ -4,6 +4,7 @@
 
 #include "Components/Button.h"
 #include "Components/WidgetSwitcher.h"
+#include "Components/EditableTextBox.h"
 
 bool UMainMenu::Initialize()
 {
@@ -12,6 +13,9 @@ bool UMainMenu::Initialize()
 	
 	if (!ensure(HostButton != nullptr)) return false;
 	HostButton->OnClicked.AddDynamic(this, &UMainMenu::HostServer);
+
+	if (!ensure(JoinServerButton != nullptr)) return false;
+	JoinServerButton->OnClicked.AddDynamic(this, &UMainMenu::JoinServer);
 
 	if (!ensure(JoinMenuButton != nullptr)) return false;
 	JoinMenuButton->OnClicked.AddDynamic(this, &UMainMenu::OpenJoinMenu);
@@ -59,9 +63,16 @@ void UMainMenu::TearDown()
 
 void UMainMenu::HostServer()
 {
+	if (MenuInterface != nullptr) MenuInterface->Host();
+}
+
+void UMainMenu::JoinServer()
+{
 	if (MenuInterface != nullptr)
 	{
-		MenuInterface->Host();
+		if (!ensure(IPAddressInput != nullptr)) return;
+		const FString& Address = IPAddressInput->GetText().ToString();
+		MenuInterface->Join(Address);
 	}
 }
 
@@ -75,10 +86,5 @@ void UMainMenu::OpenJoinMenu()
 {
 	if (!ensure(MenuSwitcher != nullptr) || !ensure(JoinMenu != nullptr)) return;
 	MenuSwitcher->SetActiveWidget(JoinMenu);
-}
-
-void UMainMenu::JoinServer()
-{
-	UE_LOG(LogTemp, Warning, TEXT("I am going to join a game!"));
 }
 

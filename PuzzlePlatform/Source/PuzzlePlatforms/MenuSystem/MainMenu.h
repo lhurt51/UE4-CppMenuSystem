@@ -7,6 +7,9 @@
 #include "MenuInterface.h"
 #include "MainMenu.generated.h"
 
+class UButton;
+class UWidget;
+
 /**
  * 
  */
@@ -27,37 +30,40 @@ public:
 
 private:
 	UPROPERTY(meta = (BindWidget))
-	class UButton* HostButton;
+	UButton* HostButton;
 
 	UPROPERTY(meta = (BindWidget))
-	class UButton* JoinMenuButton;
+	UButton* JoinMenuButton;
 
 	UPROPERTY(meta = (BindWidget))
-	class UButton* CancelJoinButton;
+	UButton* CancelJoinButton;
 
 	UPROPERTY(meta = (BindWidget))
-	class UButton* JoinButton;
+	UButton* JoinServerButton;
+
+	UPROPERTY(meta = (BindWidget))
+	UWidget* MainMenu;
+
+	UPROPERTY(meta = (BindWidget))
+	UWidget* JoinMenu;
 
 	UPROPERTY(meta = (BindWidget))
 	class UWidgetSwitcher* MenuSwitcher;
 
 	UPROPERTY(meta = (BindWidget))
-	class UWidget* MainMenu;
-
-	UPROPERTY(meta = (BindWidget))
-	class UWidget* JoinMenu;
+	class UEditableTextBox* IPAddressInput;
 
 	UFUNCTION()
 	void HostServer();
+
+	UFUNCTION()
+	void JoinServer();
 
 	UFUNCTION()
 	void OpenMainMenu();
 
 	UFUNCTION()
 	void OpenJoinMenu();
-
-	UFUNCTION()
-	void JoinServer();
 
 	IMenuInterface* MenuInterface;
 

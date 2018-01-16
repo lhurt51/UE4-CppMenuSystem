@@ -50,10 +50,12 @@ void UPuzzlePlatformsGameInstance::Host()
 
 void UPuzzlePlatformsGameInstance::Join(const FString & Address)
 {
+	if (Menu != nullptr) Menu->TearDown();
+
 	UEngine* Engine = GetEngine();
 
 	if (!ensure(Engine != nullptr)) return;
-	Engine->AddOnScreenDebugMessage(0, 5, FColor::Green, FString::Printf(TEXT("Joining %s"), *Address));
+	Engine->AddOnScreenDebugMessage(0, 2, FColor::Green, FString::Printf(TEXT("Joining %s"), *Address));
 
 	APlayerController *PlayerController = GetFirstLocalPlayerController();
 
