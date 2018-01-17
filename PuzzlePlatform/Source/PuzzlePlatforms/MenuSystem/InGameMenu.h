@@ -21,6 +21,16 @@ protected:
 	virtual bool Initialize();
 
 private:
+	UPROPERTY(meta = (BindWidget))
+	UButton* QuitButton;
 	
+	UPROPERTY(meta = (BindWidget))
+	UButton* CancelButton;
+
+	UFUNCTION()
+	void CancelButtonPressed();
+
+	UFUNCTION()
+	void QuitButtonPressed();
 	
 };

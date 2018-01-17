@@ -79,3 +79,17 @@ void UPuzzlePlatformsGameInstance::Join(const FString & Address)
 	if (!ensure(PlayerController != nullptr)) return;
 	PlayerController->ClientTravel(Address, ETravelType::TRAVEL_Absolute);
 }
+
+
+void UPuzzlePlatformsGameInstance::LoadMainMenu()
+{
+	UEngine* Engine = GetEngine();
+
+	if (!ensure(Engine != nullptr)) return;
+	Engine->AddOnScreenDebugMessage(0, 2, FColor::Green, TEXT("Loading Menu"));
+
+	APlayerController* PlayerController = GetFirstLocalPlayerController();
+
+	if (!ensure(PlayerController != nullptr)) return;
+	PlayerController->ClientTravel("/Game/MenuSystem/Levels/MainMenu", ETravelType::TRAVEL_Absolute);
+}
