@@ -6,7 +6,7 @@ Contains project files for Unreal Engine 4 C++ Modular Menu System
 
 ![alt text](project img)
 
-Project Features
+**Project Features
 
   	- Menu Widget Base C++ Class
 	- Main Menu Widget Blueprint
@@ -18,7 +18,7 @@ Project Features
 	- Main Menu Level
 	- Full Puzzle Platforms Game
 	
-Subjects Covered
+**Subjects Covered
 
 	- Creating Widget Blueprints
 	- Accesing UI Classes in C++
