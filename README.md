@@ -39,7 +39,7 @@ Get the Udemy Course now and learn the muliplayer mastery with Unreal Engine 4: 
 
 ![alt text](https://udemy-images.udemy.com/course/480x270/1319066_eee6_2.jpg)
 
-Skills Acquired
+**Skills Acquired**
 
 	- Build multiplayer games.
   	- Share games with a large audience.
