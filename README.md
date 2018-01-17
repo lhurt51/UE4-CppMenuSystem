@@ -14,8 +14,21 @@ Project Features
 	- In Game Widget Blueprint
 	- In Game C++ Class
 	- Menu Interface To Connect the Game Instance
+	- Custom Fonts and Images
 	- Main Menu Level
 	- Full Puzzle Platforms Game
+	
+Subjects Covered
+
+	- Creating Widget Blueprints
+	- Accesing UI Classes in C++
+	- Loading/Displaying UMG with C++
+	- Changing UI Input Modes
+	- Widget Initializers and UButton Callbacks
+	- Using Interfaces to Invert Dependencies
+	- Creating Sub-Menus with Widget Switchers
+	- Reading Text Fields in C++
+	- Client and Server Travel with C++
 
 **Looking for a step by step guide?** Check out 
 Sam Pattuzzi's **[Unreal Multiplayer Mastery - Online Game Development In C++](https://www.udemy.com/unrealmultiplayer/)!** The course is designed to teach you everything you need to know about networks from the basics of latency in networks to the advanced topics of state synchronisation.
