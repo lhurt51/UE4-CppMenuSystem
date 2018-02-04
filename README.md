@@ -44,8 +44,8 @@ Get the Udemy Course now and learn the muliplayer mastery with Unreal Engine 4: 
 	- Build multiplayer games.
   	- Share games with a large audience.
  	- Build UI with UMG and C++.
-**( Haven't Learned Yet )**
-
 	- Connect games via the Steam APIs.
+**( Haven't Learned Yet )**
+	
 	- Understand the challenges of computer networks.
 	- Understand how Unreal replicates state.
